@@ -1,0 +1,69 @@
+.head12{
+    
+    height:7vh;
+    background-color: black;
+    width: 100%;
+    display: flex;
+    color: white;
+    /*border: 2px solid blue;*/
+    
+
+}
+
+.centerbox{
+    height: 86vh;
+    background-color: whitesmoke;
+    width: 100%;
+    /*border: 2px solid red;*/
+
+}
+.leader{
+    font-size: 3.2vh;
+    text-align: center;
+    margin-top: 1.2vh;
+    margin-left: 43.2vw;
+    font-weight:500;
+    color:white;
+    justify-content: center;
+}
+.question{
+    margin-top: 1.4vh;
+    height:4.2vh;
+    font-size: 2vh;
+    text-align: center;
+    margin-left: 20vw;
+    color:white;
+    background-color: rgba(18, 214, 214, 0.788);
+    font-weight: 500;
+    
+}
+.log-out{
+    margin-top: 1.4vh;
+    height: 4.2vh;
+    font-size: 2.1vh;
+    text-align: center;
+    margin-left: 2vw;
+    color:white;
+    background-color: red;
+    font-weight: 500;
+}
+
+.tablebox{
+    width:55vw;
+    margin-left: 22.5vw;
+    text-align: center;
+    font-weight: unset;
+    
+    justify-content: center;
+}
+
+.footerbox{
+    color:white;
+    height: 7vh;
+    font-size: 3vh;
+    font-weight: unset;
+    
+    justify-content: center;
+    text-align: center;
+    background-color: black;
+}

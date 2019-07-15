@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+  	function func(){
+  	document.getElementById('for').style.display  = "none";
+  }
+  func();
+  </script>
+  <style type="text/css">
+  	.btn:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.hi{
+  border-left: solid white;
+  border-width: thin;
+  height: 600px;
+}
+.ul
+{
+    padding:0vh 0vh 2vh 0vh;
+}
+.a{
+	border-top-left-radius: 10px;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    max-width: 170px;
+    background-color: white;
+    float: left;
+    border: none;
+    outline: none;
+    color: black;
+    font-weight: 400;
+}
+.b{
+
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 170px;
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    color: inherit;
+    font-weight: 400;
+}
+a:hover{
+	color: white;
+}
+li:hover{
+	border: none;
+	outline: none;
+	box-shadow: none;
+}
+li.active{
+		border-top-right-radius: 20px;
+		border-top-left-radius: 20px;
+background-color:rgb(71, 68, 255);
+border:none;
+outline: none;
+color: white;
+}
+
+  </style>
+
+</head>
+<body style="background-color:rgb(209, 210, 236);overflow-x:hidden">
+		<div class="row" style="padding: 70px">
+				<div class="login mt-5" style="max-width: 340px;width: 90%;margin: 0 auto;border-radius:5px;padding-bottom:100px;box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.1);background: white">
+					 <ul class="nav nav-tabs">
+                            <li class="active  a" >
+                                    <a class="nav-link active b" data-toggle="tab" href="#login">Sign In</a></li>
+                                    <li class="active a" >        
+                                    <a class="nav-link b" data-toggle="tab" href="#register">Sign Up</a></li>                               
+                        </ul>
+                         <div class="tab-content"style = "border: none;">
+ 					 <div id="login"class="tab-pane active">
+					<form class="form" action="{% url 'login' %}" method="post" id = "for" style="padding-left:40px;padding-right:40px;padding-top: 40px;">{% csrf_token %}
+					<div class="form-group mt-5">
+						<span class="input-group-addon">
+							<i class="glyphicon glyphicon-user"></i>
+						</span>
+						<input type="text" name="username" id = "user"  class="form-control"placeholder="Username" onfocus="placeholder=''" onblur="placeholder='Username'" autocomplete="off">
+					</div>
+					<div class="form-group mt-3">
+						<input type="password" name="password" id = "pass"  class="form-control"placeholder="Password" onfocus="placeholder=''" onblur="placeholder='Password'" autocomplete="off">
+					</div>
+					<input type="submit" name="submit" value="submit" class="btn btn-block" style="color:white;box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.1);background:rgb(71, 68, 255);margin-top: 100px">
+				</form>
+			</div>
+				<!-- </div> -->
+				<!-- <div class="hi" id="hi"></div> -->
+				<!-- <div class="register mt-5" style="max-width: 340px;width: 90%;margin: 0 auto;border-radius:10px;padding-bottom:100px;box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.1);background: white">
+					<div style="width: 100%;max-height: 70px;height: 70px;border-top-left-radius: 10px;border-top-right-radius: 10px;background-color: #007BFF;display: flex;align-items: center;flex-direction: row;justify-content: center;">
+    					<strong style="color: white">Sign Up</strong>
+    				</div> -->
+    				 <div id="register"class="tab-pane fade">
+					<form class="form" action="" method="post" style="padding-left:40px;padding-right:40px;padding-top: 40px;" >{% csrf_token %}
+					<div class="form-group mt-4">
+						<input type="text" name="fname" id = "username" class="form-control" placeholder="Name" onfocus="placeholder=''" onblur="placeholder='Name'" autocomplete="off">
+					</div>
+										<div class="form-group mt-4">
+						<input type="text" name="username" id = "user"class="form-control"  placeholder="Username" onfocus="placeholder=''" onblur="placeholder='Username'" autocomplete="off">
+					</div>
+					<div class="form-group mt-4">
+						<input type="text" name="phone" id = "username" class="form-control" placeholder="Mobile No" onfocus="placeholder=''" onblur="placeholder='Mobile No'" maxlength="10" minlength="10" autocomplete="off">
+					</div>
+					<div class="form-group mt-4">
+						<input type="password" name="password" id = "password" class="form-control" placeholder="Password" onfocus="placeholder=''" onblur="placeholder='Password'" autocomplete="off">
+					</div>
+
+					<input type="submit" name="submit_reg" value="submit" class="btn btn-block  mt-5" style="color: white;box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.1);background:rgb(71, 68, 255)">
+
+			</form>
+		</div>
+	</div>
+		</div>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+  </head>
+  <style>
+    .navbar {
+      height: 10vh;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .item {
+      float: right;
+    }
+    .code_region {
+      height: 60vh;
+      width: 50vw;
+      position: relative;
+      top: 5vh;
+      left: 5vw;
+      resize: none;
+    }
+    .options {
+      float: right;
+      position: relative;
+      top: 15vh;
+      right: 5vw;
+    }
+    .form-control {
+      height: 10vh;
+      padding: 1vh 2vw;
+    }
+    .option-value {
+      height: 8vh;
+      width: 25vw;
+      resize: none;
+      box-shadow: inset 1px 1px 2px 1px rgba(0, 0, 0, 0.233);
+      background: rgb(241, 241, 241);
+      border-radius: 5px;
+    }
+    .radio-btn {
+      float: left;
+      padding-top: 2vh;
+      margin-left: -1.5vw;
+    }
+    body {
+      overflow-x: hidden;
+    }
+
+    @media only screen and (max-width: 480px) {
+      body {
+        overflow-x: hidden;
+      }
+      .code_region {
+        width: 90vw;
+        top: 15vh;
+      }
+      .options {
+        float: right;
+        position: relative;
+        top: 15vh;
+        right: 5vw;
+      }
+      .option-value {
+        height: 8vh;
+        width: 80vw;
+      }
+      .radio-btn {
+        float: left;
+        padding: 2vh 5vw;
+      }
+      .item > .btn {
+        width: 25vw;
+        font-size: 2.5vw;
+      }
+    }
+  </style>
+  <body>
+    <nav class="navbar bg-light">
+      <div class="item">
+        <a href="{% url 'leaderboard' %}">
+        <div class="btn btn-primary">
+          LeaderBoard
+        </div>
+        </a>
+        <a href="{% url 'question_hub' %}">
+        <div class="btn btn-success">
+          Question Hub
+        </div>
+        </a>
+        <a href="{% url 'logout' %}">
+        <div class="btn btn-danger">
+          Log Out
+        </div>
+        </a>
+      </div>
+    </nav>
+    <form method="post" action="">{% csrf_token %}
+      <div class="row">
+        <div class="col-md-8 coding">
+          <div class="form-group">
+            <textarea name="q" id="code" class="code_region"> {{q}} </textarea>
+          </div>
+        </div>
+        <div class="col-md-4 options">
+          <div class="form-group">
+            <div class="form-control">
+              <div class="radio-btn">
+                <input type="radio" name="option" value="1" id="1" />
+              </div>
+              <textarea name="c1" class="option-value"
+                placeholder="option 1"
+
+              >{{c1}}</textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-control">
+              <div class="radio-btn">
+                <input type="radio" name="option" id="2" value="2"/>
+              </div>
+              <textarea name="c2"
+                class="option-value"
+                placeholder="option 2"
+
+              >{{c2}}</textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-control">
+              <div class="radio-btn">
+                <input type="radio" name="option" id="3" value="3"/>
+              </div>
+              <textarea name="c3"
+                class="option-value"
+                placeholder="option 3"
+
+              >{{c3}}</textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-control">
+              <div class="radio-btn">
+                <input type="radio" name="option" id="4" value="4"/>
+              </div>
+              <textarea name="c4"
+                class="option-value"
+                placeholder="option 4"
+
+              >{{c4}}</textarea>
+            </div>
+          </div>
+          <div class="form-group text-center">
+            <button class="btn btn-success"  onclick="handleOnClick()" >Submit</button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+  <script>
+   document.addEventListener('DOMContentLoaded', function() {
+   if({{error}}) {
+      alert("Error in submission")
+   }
+   // console.log(id);
+   document.getElementById("{{ correct }}").checked = true;
+   }, false
+   );
+</script>
+  </body>
+</html>
