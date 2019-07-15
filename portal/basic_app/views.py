@@ -76,7 +76,7 @@ def edit_question(request, id):
         correct = request.POST.get('option')
         if choice1 == "" or choice2 == "" or choice3 == "" or choice4 == "" or questions == "" or correct is None:
             return render(request, 'basic_app/coding.html', context={
-                'c1': choice1, 'c2': choice2, 'c3': choice3, 'c4': choice4, 'q': questions, 'correct': correct
+                'c1': choice1, 'c2': choice2, 'c3': choice3, 'c4': choice4, 'q': questions, 'correct': correct, 'error':'true
             })
 
         a.questions = questions

@@ -166,8 +166,8 @@
 
   <script>
    document.addEventListener('DOMContentLoaded', function() {
-   if({{error}}) {
-      alert("Error in submission")
+   if("{{error}}" !== "") {
+      alert("Error in submission");
    }
    // console.log(id);
    document.getElementById("{{ correct }}").checked = true;

@@ -25,7 +25,7 @@ SECRET_KEY = '&0-m1kly0fg1dv*f@el1u-*^86y58vz&$!_luo*==(ocg^6cnd'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['clash2k19.pythonanywhere.com']
 
 
 # Application definition
@@ -119,3 +119,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/home/clash2k19/portal/portal/static'
