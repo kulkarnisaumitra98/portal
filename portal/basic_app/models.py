@@ -15,9 +15,6 @@ class Questions(models.Model):
     choice4 = models.CharField(max_length=126)
     correct = models.CharField(max_length=1)
 
-    def __str__(self):
-        return self.questions
-
 
 class UserProfileInfo(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)

@@ -18,6 +18,9 @@ def register(request):
             password = request.POST.get('password')
             phone = request.POST.get('phone')
 
+            if username == "" or fname == "" or password == "" or phone == "":
+                return render(request, 'basic_app/login.html', context={'error': 'true'})
+
             user = User.objects.create_user(username=username, password=password, first_name=fname)
             user.save()
             login(request, user)
