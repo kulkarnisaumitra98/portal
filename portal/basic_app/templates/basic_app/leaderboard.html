@@ -50,14 +50,14 @@ td, th{
     <table class="table table-striped table-hover">
         <thead>
             <th>Rank</th>
-            <th>UserName</th>
+            <th>Name</th>
             <th>Total Questions</th>
         </thead>
         <tbody>
         {% for user in list %}
             <tr>
                 <td>{{ forloop.counter }}</td>
-                <td>{{ user.user.username }}</td>
+                <td>{{ user.user.first_name }}</td>
                 <td>{{ user.nofquestion }}</td>
             </tr>
 
