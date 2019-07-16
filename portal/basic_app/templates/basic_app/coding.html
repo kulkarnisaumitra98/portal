@@ -26,6 +26,9 @@
       top: 5vh;
       left: 5vw;
       resize: none;
+      border-radius:5px;
+      padding:2vh;
+      box-shadow:1px 1px 7px 1px grey;
     }
     .options {
       float: right;
@@ -35,7 +38,7 @@
     }
     .form-control {
       height: 10vh;
-      padding: 1vh 2vw;
+      padding: 1vh 3vw;
     }
     .option-value {
       height: 8vh;
@@ -44,6 +47,7 @@
       box-shadow: inset 1px 1px 2px 1px rgba(0, 0, 0, 0.233);
       background: rgb(241, 241, 241);
       border-radius: 5px;
+      padding:2vh;
     }
     .radio-btn {
       float: left;
@@ -87,7 +91,7 @@
       <div class="item">
         <a href="{% url 'leaderboard' %}">
         <div class="btn btn-primary">
-          LeaderBoard
+          Leaderboard
         </div>
         </a>
         <a href="{% url 'question_hub' %}">

@@ -21,7 +21,7 @@
     margin: auto;
     margin-top: 5vh;
 }
-td, th{
+td, th{ max-width:10vw;
     text-align: center;
 }
 
@@ -33,6 +33,10 @@ td, th{
            width: 25vw;
            font-size: 2.5vw;
        }
+       td,th{
+           max-width:5%;
+    text-align: center;
+       }
 
 }
 </style>
@@ -42,6 +46,11 @@ td, th{
                 <a href="{% url 'questions' %}">
                     <div class="btn btn-primary">
                         Add Question
+                    </div>
+                </a>
+                <a href="{% url 'leaderboard' %}">
+                    <div class="btn btn-success">
+                        Leaderboard
                     </div>
                 </a>
                 <a href="{% url 'logout' %}">
@@ -61,7 +70,7 @@ td, th{
           {% for question in questions %}
           <tr>
               <td>{{ forloop.counter }}</td>
-              <td>{{ question.questions }}</td>
+              <td>{{ question.questions|truncatechars:60}}</td>
               <td><a href="{% url 'edit_question' id=question.id %}"> <button class="btn btn-primary"> View </button> </a> </td>
           </tr>
           {% endfor %}
