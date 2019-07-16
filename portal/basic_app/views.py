@@ -140,7 +140,7 @@ def elogin(request):
                     login(request, user)
                     return HttpResponseRedirect(reverse('question_hub'))
             else:
-                return HttpResponse("Invalid login details supplied.")
+                return render(request, 'basic_app/login.html', context={'error':'true'})
         else:
             return render(request, 'basic_app/login.html', {})
 
